@@ -1,6 +1,0 @@
-print("SafeHer is working!")
-print("This is my first change.")
-print("hello world")
-print("cat")
-print("dog")
-print("this is my second change.")
