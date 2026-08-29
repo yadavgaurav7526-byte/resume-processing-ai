@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Choose Template — PortfolioAI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="career-dna-body">
+
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>✦</span>
+            PortfolioAI
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-link">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="career-dna.html" class="sidebar-link">
+                <span>▣</span>
+                My Portfolio
+            </a>
+
+            <a href="templates.html" class="sidebar-link active">
+                <span>✦</span>
+                Templates
+            </a>
+
+            <a href="#" class="sidebar-link">
+                <span>◉</span>
+                Insights
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="sidebar-link">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <div class="user-mini">
+
+                <div
+                    class="user-avatar"
+                    id="templateAvatar"
+                >
+                    U
+                </div>
+
+                <div>
+
+                    <strong id="templateUserName">
+                        User
+                    </strong>
+
+                    <small>
+                        My account
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <main class="career-main">
+
+
+        <header class="career-header">
+
+            <div>
+
+                <span class="career-eyebrow">
+                    PORTFOLIO DESIGN
+                </span>
+
+                <h1>
+                    Choose your style.
+                </h1>
+
+                <p>
+                    Select a portfolio template.
+                    Your Career DNA will automatically
+                    be used to build your portfolio.
+                </p>
+
+            </div>
+
+
+            <div class="career-progress">
+
+                <span>
+                    STEP 03
+                </span>
+
+                <strong>
+                    Choose template
+                </strong>
+
+            </div>
+
+        </header>
+
+
+
+        <section class="template-grid">
+
+
+            <div
+                class="template-card selected"
+                data-template="minimal"
+            >
+
+                <div class="template-preview minimal-preview">
+
+                    <div class="preview-top">
+                        <strong>Your Name</strong>
+                        <span>Portfolio</span>
+                    </div>
+
+                    <div class="preview-content">
+
+                        <div class="preview-line large"></div>
+                        <div class="preview-line"></div>
+                        <div class="preview-line short"></div>
+
+                        <div class="preview-boxes">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="template-info">
+
+                    <div>
+
+                        <h3>
+                            Minimal
+                        </h3>
+
+                        <p>
+                            Clean, simple and professional.
+                        </p>
+
+                    </div>
+
+                    <span class="template-check">
+                        ✓
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="template-card"
+                data-template="creative"
+            >
+
+                <div class="template-preview creative-preview">
+
+                    <div class="preview-sidebar"></div>
+
+                    <div class="creative-preview-content">
+
+                        <div class="preview-line large"></div>
+                        <div class="preview-line"></div>
+
+                        <div class="preview-circle"></div>
+
+                        <div class="preview-boxes">
+
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="template-info">
+
+                    <div>
+
+                        <h3>
+                            Creative
+                        </h3>
+
+                        <p>
+                            Bold and expressive for designers.
+                        </p>
+
+                    </div>
+
+                    <span class="template-check">
+                        ✓
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="template-card"
+                data-template="developer"
+            >
+
+                <div class="template-preview developer-preview">
+
+                    <div class="code-header">
+                        &lt;portfolio /&gt;
+                    </div>
+
+                    <div class="code-lines">
+
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="template-info">
+
+                    <div>
+
+                        <h3>
+                            Developer
+                        </h3>
+
+                        <p>
+                            Tech-focused portfolio layout.
+                        </p>
+
+                    </div>
+
+                    <span class="template-check">
+                        ✓
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <div class="career-actions">
+
+            <button
+                class="back-action"
+                type="button"
+                onclick="window.location.href='career-dna.html'"
+            >
+                ← Back
+            </button>
+
+
+            <button
+                class="continue-action"
+                id="generatePortfolio"
+                type="button"
+            >
+
+                Create my portfolio
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+        </div>
+
+
+    </main>
+
+
+    <script src="templates.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Career DNA — PortfolioAI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="career-dna-body">
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <span>✦</span>
+            PortfolioAI
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-link">
+
+                <span>⌂</span>
+                Dashboard
+
+            </a>
+
+
+            <a href="#" class="sidebar-link active">
+
+                <span>▣</span>
+                My Portfolio
+
+            </a>
+
+
+            <a href="#" class="sidebar-link">
+
+                <span>✦</span>
+                Templates
+
+            </a>
+
+
+            <a href="#" class="sidebar-link">
+
+                <span>◉</span>
+                Insights
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="sidebar-link">
+
+                <span>⚙</span>
+                Settings
+
+            </a>
+
+
+            <div class="user-mini">
+
+                <div
+                    class="user-avatar"
+                    id="careerSidebarAvatar"
+                >
+                    D
+                </div>
+
+
+                <div>
+
+                    <strong id="careerSidebarName">
+                        User
+                    </strong>
+
+                    <small>
+                        My account
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="career-main">
+
+
+        <!-- HEADER -->
+
+        <header class="career-header">
+
+            <div>
+
+                <span class="career-eyebrow">
+                    YOUR CAREER DNA
+                </span>
+
+                <h1>
+                    Let's make sure
+                    we've got you right.
+                </h1>
+
+                <p>
+                    We've organized the information
+                    from your resume. Review everything
+                    before creating your portfolio.
+                </p>
+
+            </div>
+
+
+            <div class="career-progress">
+
+                <span>
+                    STEP 02
+                </span>
+
+                <strong>
+                    Review information
+                </strong>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             RESUME STATUS
+        ========================== -->
+
+        <section class="resume-status-card">
+
+            <div class="resume-status-icon">
+                ✓
+            </div>
+
+
+            <div class="resume-status-info">
+
+                <span>
+                    RESUME PROCESSED
+                </span>
+
+                <strong id="resumeFileName">
+                    Your resume
+                </strong>
+
+                <small>
+                    Information extracted successfully
+                </small>
+
+            </div>
+
+
+            <button
+                class="secondary-action"
+                id="changeResume"
+                type="button"
+            >
+                Change resume
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================
+             PERSONAL INFORMATION
+        ========================== -->
+
+        <section class="dna-section">
+
+            <div class="dna-section-heading">
+
+                <div>
+
+                    <span>
+                        01
+                    </span>
+
+                    <h2>
+                        Personal information
+                    </h2>
+
+                </div>
+
+                <p>
+                    The basics that introduce you.
+                </p>
+
+            </div>
+
+
+            <div class="dna-grid">
+
+
+                <div class="dna-field">
+
+                    <label>
+                        Full name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="dnaName"
+                        placeholder="Your full name"
+                    >
+
+                </div>
+
+
+                <div class="dna-field">
+
+                    <label>
+                        Email address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="dnaEmail"
+                        placeholder="you@example.com"
+                    >
+
+                </div>
+
+
+                <div class="dna-field">
+
+                    <label>
+                        Phone number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="dnaPhone"
+                        placeholder="Your phone number"
+                    >
+
+                </div>
+
+
+                <div class="dna-field">
+
+                    <label>
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="dnaLocation"
+                        placeholder="City, Country"
+                    >
+
+                </div>
+
+
+                <div class="dna-field full-width">
+
+                    <label>
+                        Professional introduction
+                    </label>
+
+                    <textarea
+                        id="dnaIntroduction"
+                        rows="5"
+                        placeholder="Tell people who you are and what you do..."
+                    ></textarea>
+
+                    <small>
+                        You can improve this with AI later.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             EDUCATION
+        ========================== -->
+
+        <section class="dna-section">
+
+            <div class="dna-section-heading">
+
+                <div>
+
+                    <span>
+                        02
+                    </span>
+
+                    <h2>
+                        Education
+                    </h2>
+
+                </div>
+
+                <button
+                    class="add-section-btn"
+                    id="addEducation"
+                    type="button"
+                >
+                    + Add education
+                </button>
+
+            </div>
+
+
+            <div id="educationContainer">
+
+                <div class="dna-entry">
+
+                    <div class="entry-content">
+
+                        <input
+                            type="text"
+                            class="education-degree"
+                            placeholder="Degree / qualification"
+                        >
+
+                        <input
+                            type="text"
+                            class="education-institution"
+                            placeholder="College / institution"
+                        >
+
+                        <input
+                            type="text"
+                            class="education-duration"
+                            placeholder="Year / duration"
+                        >
+
+                    </div>
+
+
+                    <button
+                        class="delete-entry"
+                        type="button"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             EXPERIENCE
+        ========================== -->
+
+        <section class="dna-section">
+
+            <div class="dna-section-heading">
+
+                <div>
+
+                    <span>
+                        03
+                    </span>
+
+                    <h2>
+                        Experience
+                    </h2>
+
+                </div>
+
+                <button
+                    class="add-section-btn"
+                    id="addExperience"
+                    type="button"
+                >
+                    + Add experience
+                </button>
+
+            </div>
+
+
+            <div id="experienceContainer">
+
+                <div class="empty-dna">
+
+                    <span>＋</span>
+
+                    <p>
+                        No experience added yet.
+                    </p>
+
+                    <small>
+                        You can add internships,
+                        jobs or other professional experience.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section class="dna-section">
+
+            <div class="dna-section-heading">
+
+                <div>
+
+                    <span>
+                        04
+                    </span>
+
+                    <h2>
+                        Projects
+                    </h2>
+
+                </div>
+
+                <button
+                    class="add-section-btn"
+                    id="addProject"
+                    type="button"
+                >
+                    + Add project
+                </button>
+
+            </div>
+
+
+            <div id="projectsContainer">
+
+                <div class="dna-entry project-entry">
+
+                    <div class="entry-content">
+
+                        <input
+                            type="text"
+                            class="project-name"
+                            placeholder="Project name"
+                        >
+
+                        <textarea
+                            rows="4"
+                            class="project-description"
+                            placeholder="What did you build? What problem did it solve?"
+                        ></textarea>
+
+                        <input
+                            type="text"
+                            class="project-technologies"
+                            placeholder="Technologies used"
+                        >
+
+                    </div>
+
+
+                    <button
+                        class="delete-entry"
+                        type="button"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+
+        <section class="dna-section">
+
+            <div class="dna-section-heading">
+
+                <div>
+
+                    <span>
+                        05
+                    </span>
+
+                    <h2>
+                        Skills
+                    </h2>
+
+                </div>
+
+                <p>
+                    Add or remove anything you want.
+                </p>
+
+            </div>
+
+
+            <div class="skills-editor">
+
+                <div
+                    class="skill-tags"
+                    id="skillTags"
+                >
+
+                    <!-- Skills will be inserted by JavaScript -->
+
+                </div>
+
+
+                <input
+                    type="text"
+                    id="newSkill"
+                    placeholder="Type a skill and press Enter..."
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ACHIEVEMENTS
+        ========================== -->
+
+        <section class="dna-section">
+
+            <div class="dna-section-heading">
+
+                <div>
+
+                    <span>
+                        06
+                    </span>
+
+                    <h2>
+                        Achievements
+                    </h2>
+
+                </div>
+
+                <button
+                    class="add-section-btn"
+                    id="addAchievement"
+                    type="button"
+                >
+                    + Add achievement
+                </button>
+
+            </div>
+
+
+            <div id="achievementsContainer">
+
+                <div class="empty-dna">
+
+                    <span>✦</span>
+
+                    <p>
+                        No achievements added yet.
+                    </p>
+
+                    <small>
+                        Hackathons, certifications,
+                        awards and more.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+<section class="dna-section">
+
+    <div class="dna-section-heading">
+
+        <div>
+
+            <span>
+                07
+            </span>
+
+            <h2>
+                Certifications
+            </h2>
+
+        </div>
+
+        <button
+            class="add-section-btn"
+            id="addCertification"
+            type="button"
+        >
+            + Add certification
+        </button>
+
+    </div>
+
+
+    <div id="certificationsContainer">
+
+        <div class="empty-dna">
+
+            <span>✦</span>
+
+            <p>
+                No certifications added yet.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- =========================
+             LINKS
+        ========================== -->
+
+        <section class="dna-section">
+
+            <div class="dna-section-heading">
+
+                <div>
+
+                    <span>
+                        08
+                    </span>
+
+                    <h2>
+                        Professional links
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="dna-grid">
+
+                <div class="dna-field">
+
+                    <label>
+                        GitHub
+                    </label>
+
+                    <input
+                        type="url"
+                        id="dnaGithub"
+                        placeholder="https://github.com/..."
+                    >
+
+                </div>
+
+
+                <div class="dna-field">
+
+                    <label>
+                        LinkedIn
+                    </label>
+
+                    <input
+                        type="url"
+                        id="dnaLinkedin"
+                        placeholder="https://linkedin.com/in/..."
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             AI SUGGESTION
+        ========================== -->
+
+        <!-- ======================================================
+     AI IMPROVEMENT
+====================================================== -->
+
+<section class="ai-suggestion-card">
+
+    <div class="ai-spark">
+        ✦
+    </div>
+
+    <div class="ai-suggestion-content">
+
+        <span>
+            PORTFOLIOAI AI ASSISTANT
+        </span>
+
+        <h3>
+            Ready to make your story stronger?
+        </h3>
+
+        <p id="aiSuggestionText">
+            Let AI improve your introduction,
+            project descriptions and experience
+            while keeping your information factual.
+        </p>
+
+        <button
+            type="button"
+            class="ai-improve-btn"
+            id="improveCareerBtn"
+        >
+            ✦ Improve with AI
+        </button>
+
+    </div>
+
+</section>
+
+
+
+        <!-- =========================
+             BOTTOM ACTIONS
+        ========================== -->
+
+        <div class="career-actions">
+
+            <button
+                class="back-action"
+                type="button"
+                onclick="window.location.href='dashboard.html'"
+            >
+                ← Back
+            </button>
+
+
+            <button
+                class="continue-action"
+                id="continueToTemplates"
+                type="button"
+            >
+                Continue to design
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+        </div>
+
+
+    </main>
+
+
+
+    <script src="career-dna.js"></script>
+
+</body>
+
+</html>

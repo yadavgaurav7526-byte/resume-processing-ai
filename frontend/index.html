@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PortfolioAI — Your Resume, Reimagined</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-mark">✦</span>
+            Portfolio<span>AI</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#templates">Templates</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <button class="login-btn">Log in</button>
+            <button class="primary-btn">Get started</button>
+        </div>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span>✦</span>
+                    Your career, upgraded
+                </div>
+
+                <h1>
+                    Your resume
+                    <span>deserves more</span>
+                    than one page.
+                </h1>
+
+                <p class="hero-description">
+                    Transform your resume into a professional,
+                    editable portfolio website — without writing
+                    a single line of code.
+                </p>
+
+                <div class="hero-actions">
+
+                    <button class="hero-btn">
+                        Create my portfolio
+                        <span>→</span>
+                    </button>
+
+                    <button class="watch-btn">
+                        <span class="play-icon">▶</span>
+                        See how it works
+                    </button>
+
+                </div>
+
+                <div class="trust-line">
+                    <span>✓</span> No coding required
+                    <span>✓</span> AI-assisted
+                    <span>✓</span> Shareable portfolio
+                </div>
+
+            </div>
+
+
+            <!-- PORTFOLIO PREVIEW -->
+
+            <div class="hero-visual">
+
+                <div class="floating-card card-one">
+                    <span>✦</span>
+                    AI enhanced
+                </div>
+
+                <div class="portfolio-window">
+
+                    <div class="window-top">
+
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="window-url">
+                            portfolio.ai / alex
+                        </div>
+
+                    </div>
+
+
+                    <div class="portfolio-content">
+
+                        <div class="portfolio-profile">
+
+                            <div class="avatar">
+                                A
+                            </div>
+
+                            <div>
+                                <h3>Alex Morgan</h3>
+                                <p>Computer Science Student</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="portfolio-intro">
+
+                            <small>HELLO, I'M ALEX</small>
+
+                            <h2>
+                                Building digital
+                                experiences.
+                            </h2>
+
+                            <p>
+                                Developer • Designer • Problem Solver
+                            </p>
+
+                        </div>
+
+
+                        <div class="portfolio-stats">
+
+                            <div>
+                                <strong>08</strong>
+                                <small>Projects</small>
+                            </div>
+
+                            <div>
+                                <strong>12</strong>
+                                <small>Skills</small>
+                            </div>
+
+                            <div>
+                                <strong>04</strong>
+                                <small>Certificates</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section class="features" id="features">
+
+            <div class="section-heading">
+
+                <span>WHY PORTFOLIOAI</span>
+
+                <h2>
+                    From document to
+                    <em>digital identity.</em>
+                </h2>
+
+            </div>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-number">01</div>
+
+                    <h3>Upload your resume</h3>
+
+                    <p>
+                        Give us your existing resume.
+                        We organize the information for you.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-number">02</div>
+
+                    <h3>Make it yours</h3>
+
+                    <p>
+                        Edit your information, improve your
+                        content and choose your visual style.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-number">03</div>
+
+                    <h3>Publish & share</h3>
+
+                    <p>
+                        Turn your profile into a live website
+                        with your own shareable link.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+<!-- AUTH MODAL -->
+
+<div class="auth-overlay" id="authOverlay">
+
+    <div class="auth-modal">
+
+        <button class="close-auth" id="closeAuth">×</button>
+
+        <!-- LOGIN -->
+
+        <div class="auth-form" id="loginForm">
+
+            <div class="auth-logo">✦ PortfolioAI</div>
+
+            <h2>Welcome back.</h2>
+
+            <p class="auth-subtitle">
+                Continue building your professional presence.
+            </p>
+
+            <form>
+
+                <label>Email address</label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="you@example.com"
+                    required
+                >
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <button type="submit" class="auth-submit">
+                    Log in →
+                </button>
+
+            </form>
+
+            <p class="switch-auth">
+                Don't have an account?
+                <button id="showSignup">Create one</button>
+            </p>
+
+        </div>
+
+
+        <!-- SIGNUP -->
+
+        <div class="auth-form hidden" id="signupForm">
+
+            <div class="auth-logo">✦ PortfolioAI</div>
+
+            <h2>Create your portfolio.</h2>
+
+            <p class="auth-subtitle">
+                Start turning your resume into your digital identity.
+            </p>
+
+            <form>
+
+                <label>Full name</label>
+
+                <input
+                    type="text"
+                    id="signupName"
+                    placeholder="Your name"
+                    required
+                >
+
+                <label>Email address</label>
+
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="you@example.com"
+                    required
+                >
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create a password"
+                    required
+                >
+
+                <button type="submit" class="auth-submit">
+                    Create account →
+                </button>
+
+            </form>
+
+            <p class="switch-auth">
+                Already have an account?
+                <button id="showLogin">Log in</button>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

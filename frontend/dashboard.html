@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard — PortfolioAI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <span>✦</span>
+            PortfolioAI
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="#" class="sidebar-link active">
+
+                <span>⌂</span>
+                Dashboard
+
+            </a>
+
+
+            <a href="#" class="sidebar-link">
+
+                <span>▣</span>
+                My Portfolio
+
+            </a>
+
+
+            <a href="#" class="sidebar-link">
+
+                <span>✦</span>
+                Templates
+
+            </a>
+
+
+            <a href="#" class="sidebar-link">
+
+                <span>◉</span>
+                Insights
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="sidebar-link">
+
+                <span>⚙</span>
+                Settings
+
+            </a>
+
+
+            <div class="user-mini">
+
+                <div class="user-avatar" id="sidebarAvatar">
+                    U
+                </div>
+
+                <div>
+
+                    <strong id="sidebarUserName">User</strong>
+
+                    <small>My account</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN DASHBOARD -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="dashboard-greeting">
+                    YOUR WORKSPACE
+                </p>
+
+                <h1 id="dashboardGreeting">
+                    Good evening, User.
+                </h1>
+
+            </div>
+
+
+            <button class="profile-button">
+
+                <span class="header-avatar" id="headerAvatar">
+                    U
+                </span>
+               
+                <span id="headerUserName">
+                    User
+                </span>
+
+                <span>⌄</span>
+
+            </button>
+
+        </header>
+
+
+
+        <!-- PORTFOLIO PROGRESS -->
+
+        <section class="dashboard-grid">
+
+
+            <div class="progress-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="card-label">
+                            PORTFOLIO STRENGTH
+                        </span>
+
+                        <h2>
+                            You're off to a good start.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="score-circle">
+
+                        <strong>0%</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"></div>
+
+                </div>
+
+
+                <p class="progress-description">
+
+                    Upload your resume to start
+                    building your portfolio.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- QUICK ACTION -->
+
+            <div class="quick-card">
+
+                <span class="quick-icon">
+                    ✦
+                </span>
+
+                <h3>
+                    Build your portfolio
+                </h3>
+
+                <p>
+                    Start with your existing resume
+                    and let PortfolioAI organize it.
+                </p>
+
+                <button class="upload-start-btn">
+
+                    Upload resume
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RESUME UPLOAD -->
+
+        <section class="upload-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span>
+                        STEP 01
+                    </span>
+
+                    <h2>
+                        Start with your resume.
+                    </h2>
+
+                </div>
+
+                <p>
+                    We'll organize your career information
+                    into editable sections.
+                </p>
+
+            </div>
+
+
+            <div class="upload-box">
+
+                <div class="upload-symbol">
+                    ↑
+                </div>
+
+                <h3>
+                    Drop your resume here
+                </h3>
+
+                <p>
+                    or choose a PDF from your computer
+                </p>
+
+
+                <label class="choose-file" id="chooseFileLabel">
+
+    <span id="chooseFileText">Choose PDF</span>
+
+    <input
+        type="file"
+        id="resumeFile"
+        accept=".pdf"
+        hidden
+    >
+
+</label>
+
+<div class="selected-file" id="selectedFile">
+
+    <div class="selected-file-icon">
+        📄
+    </div>
+
+    <div class="selected-file-info">
+
+        <strong id="selectedFileName">
+            Resume.pdf
+        </strong>
+
+        <span id="selectedFileSize">
+            0 MB • PDF
+        </span>
+
+    </div>
+
+    <div class="selected-file-status">
+        ✓
+    </div>
+
+</div>
+
+<button
+    class="analyze-resume-btn"
+    id="analyzeResumeBtn"
+    type="button"
+>
+
+    Upload & Analyze
+    <span>→</span>
+
+</button>
+
+<p
+    class="upload-status"
+    id="uploadStatus"
+></p>
+
+    <div class="selected-file-status" id="selectedFileStatus">
+       
+    </div>
+
+</div>
+
+
+                <small>
+                    PDF only • Maximum 10 MB
+                </small>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- WHAT HAPPENS NEXT -->
+
+        <section class="next-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span>
+                        YOUR JOURNEY
+                    </span>
+
+                    <h2>
+                        From resume to presence.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="journey-grid">
+
+
+                <div class="journey-card active">
+
+                    <div class="journey-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Upload
+                    </h3>
+
+                    <p>
+                        Give us your existing resume.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-card">
+
+                    <div class="journey-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Organize
+                    </h3>
+
+                    <p>
+                        Review the information we've extracted.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-card">
+
+                    <div class="journey-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Customize
+                    </h3>
+
+                    <p>
+                        Choose your style and make it yours.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-card">
+
+                    <div class="journey-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Publish
+                    </h3>
+
+                    <p>
+                        Share your portfolio with the world.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
