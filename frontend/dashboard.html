@@ -33,48 +33,77 @@
 
         <nav class="sidebar-nav">
 
-            <a href="#" class="sidebar-link active">
+    <a href="dashboard.html" class="sidebar-link active">
 
-                <span>⌂</span>
-                Dashboard
+        <span>⌂</span>
+        Dashboard
 
-            </a>
-
-
-            <a href="#" class="sidebar-link">
-
-                <span>▣</span>
-                My Portfolio
-
-            </a>
+    </a>
 
 
-            <a href="#" class="sidebar-link">
+    <a href="portfolio.html" class="sidebar-link">
 
-                <span>✦</span>
-                Templates
+        <span>▣</span>
+        My Portfolio
 
-            </a>
+    </a>
 
 
-            <a href="#" class="sidebar-link">
+    <a href="templates.html" class="sidebar-link">
 
-                <span>◉</span>
-                Insights
+        <span>✦</span>
+        Templates
 
-            </a>
+    </a>
 
-        </nav>
+
+    <a href="insights.html" class="sidebar-link">
+
+        <span>◉</span>
+        Insights
+
+    </a>
+
+</nav>
 
 
         <div class="sidebar-bottom">
 
-            <a href="#" class="sidebar-link">
+            <div class="sidebar-bottom">
 
-                <span>⚙</span>
-                Settings
+    <a href="settings.html" class="sidebar-link">
 
-            </a>
+        <span>⚙</span>
+        Settings
+
+    </a>
+
+
+    <a href="#" class="sidebar-link" onclick="logoutUser(); return false;">
+
+        <span>↪</span>
+        Logout
+
+    </a>
+
+
+    <div class="user-mini">
+
+        <div class="user-avatar" id="sidebarAvatar">
+            U
+        </div>
+
+        <div>
+
+            <strong id="sidebarUserName">User</strong>
+
+            <small>My account</small>
+
+        </div>
+
+    </div>
+
+</div>
 
 
             <div class="user-mini">
@@ -430,6 +459,7 @@
 
 
     <script src="script.js"></script>
+<script src="auth.js"></script>
 
 </body>
 
