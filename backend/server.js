@@ -5,7 +5,6 @@ const bcrypt = require("bcrypt");
 const multer = require("multer");
 require("dotenv").config();
 
-const { PDFParse } = require("pdf-parse");
 
 const User = require("./models/User");
 
