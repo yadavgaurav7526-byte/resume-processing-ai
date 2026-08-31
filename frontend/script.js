@@ -39,20 +39,16 @@ if (
     loginForm &&
     signupForm
 ) {
-
     loginButton.addEventListener(
         "click",
         function () {
-
             authOverlay.classList.add("active");
 
             loginForm.classList.remove("hidden");
 
             signupForm.classList.add("hidden");
-
         }
     );
-
 }
 
 
@@ -69,20 +65,16 @@ if (
     loginForm &&
     signupForm
 ) {
-
     primaryButton.addEventListener(
         "click",
         function () {
-
             authOverlay.classList.add("active");
 
             signupForm.classList.remove("hidden");
 
             loginForm.classList.add("hidden");
-
         }
     );
-
 }
 
 
@@ -99,20 +91,16 @@ if (
     loginForm &&
     signupForm
 ) {
-
     heroButton.addEventListener(
         "click",
         function () {
-
             authOverlay.classList.add("active");
 
             signupForm.classList.remove("hidden");
 
             loginForm.classList.add("hidden");
-
         }
     );
-
 }
 
 
@@ -121,16 +109,12 @@ if (
 // ======================================================
 
 if (closeAuth && authOverlay) {
-
     closeAuth.addEventListener(
         "click",
         function () {
-
             authOverlay.classList.remove("active");
-
         }
     );
-
 }
 
 
@@ -139,20 +123,14 @@ if (closeAuth && authOverlay) {
 // ======================================================
 
 if (authOverlay) {
-
     authOverlay.addEventListener(
         "click",
         function (event) {
-
             if (event.target === authOverlay) {
-
                 authOverlay.classList.remove("active");
-
             }
-
         }
     );
-
 }
 
 
@@ -165,18 +143,14 @@ if (
     loginForm &&
     signupForm
 ) {
-
     showSignup.addEventListener(
         "click",
         function () {
-
             loginForm.classList.add("hidden");
 
             signupForm.classList.remove("hidden");
-
         }
     );
-
 }
 
 
@@ -189,32 +163,28 @@ if (
     loginForm &&
     signupForm
 ) {
-
     showLogin.addEventListener(
         "click",
         function () {
-
             signupForm.classList.add("hidden");
 
             loginForm.classList.remove("hidden");
-
         }
     );
-
 }
+
 
 // ======================================================
 // EMAIL VALIDATION
 // ======================================================
 
 function isValidEmail(email) {
-
     const emailPattern =
         /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     return emailPattern.test(email.trim());
-
 }
+
 
 // ======================================================
 // SIGNUP
@@ -224,7 +194,6 @@ if (signupForm) {
 
     const signupHTMLForm =
         signupForm.querySelector("form");
-
 
     if (signupHTMLForm) {
 
@@ -268,16 +237,46 @@ if (signupForm) {
                         ? passwordInput.value
                         : "";
 
-                        if (!isValidEmail(email)) {
 
-    alert(
-        "Please enter a valid email address."
-    );
+                if (!name) {
+                    alert(
+                        "Please enter your name."
+                    );
 
-    emailInput.focus();
+                    if (nameInput) {
+                        nameInput.focus();
+                    }
 
-    return;
-}
+                    return;
+                }
+
+
+                if (!isValidEmail(email)) {
+
+                    alert(
+                        "Please enter a valid email address."
+                    );
+
+                    if (emailInput) {
+                        emailInput.focus();
+                    }
+
+                    return;
+                }
+
+
+                if (password.length < 6) {
+
+                    alert(
+                        "Password must be at least 6 characters long."
+                    );
+
+                    if (passwordInput) {
+                        passwordInput.focus();
+                    }
+
+                    return;
+                }
 
 
                 try {
@@ -332,23 +331,20 @@ if (signupForm) {
                             "hidden"
                         );
 
+
                         loginForm.classList.remove(
                             "hidden"
                         );
 
-                    }
-
-                    else {
+                    } else {
 
                         alert(
                             data.message ||
                             "Could not create account."
                         );
-
                     }
 
                 }
-
                 catch (error) {
 
                     console.error(
@@ -360,14 +356,10 @@ if (signupForm) {
                     alert(
                         "Could not connect to the server."
                     );
-
                 }
-
             }
         );
-
     }
-
 }
 
 
@@ -379,7 +371,6 @@ if (loginForm) {
 
     const loginHTMLForm =
         loginForm.querySelector("form");
-
 
     if (loginHTMLForm) {
 
@@ -412,16 +403,33 @@ if (loginForm) {
                         ? passwordInput.value
                         : "";
 
-                        if (!isValidEmail(email)) {
 
-    alert(
-        "Please enter a valid email address."
-    );
+                if (!isValidEmail(email)) {
 
-    emailInput.focus();
+                    alert(
+                        "Please enter a valid email address."
+                    );
 
-    return;
-}
+                    if (emailInput) {
+                        emailInput.focus();
+                    }
+
+                    return;
+                }
+
+
+                if (!password) {
+
+                    alert(
+                        "Please enter your password."
+                    );
+
+                    if (passwordInput) {
+                        passwordInput.focus();
+                    }
+
+                    return;
+                }
 
 
                 try {
@@ -465,7 +473,7 @@ if (loginForm) {
 
                         alert(
                             "Welcome back, " +
-                            data.user.name +
+                            (data.user?.name || "User") +
                             "! ✦"
                         );
 
@@ -481,19 +489,15 @@ if (loginForm) {
                         window.location.href =
                             "dashboard.html";
 
-                    }
-
-                    else {
+                    } else {
 
                         alert(
                             data.message ||
                             "Login failed."
                         );
-
                     }
 
                 }
-
                 catch (error) {
 
                     console.error(
@@ -505,14 +509,10 @@ if (loginForm) {
                     alert(
                         "Could not connect to the server."
                     );
-
                 }
-
             }
         );
-
     }
-
 }
 
 
@@ -569,34 +569,26 @@ if (savedUser) {
 
 
         if (sidebarUserName) {
-
             sidebarUserName.textContent =
                 userName;
-
         }
 
 
         if (headerUserName) {
-
             headerUserName.textContent =
                 userName;
-
         }
 
 
         if (sidebarAvatar) {
-
             sidebarAvatar.textContent =
                 firstLetter;
-
         }
 
 
         if (headerAvatar) {
-
             headerAvatar.textContent =
                 firstLetter;
-
         }
 
 
@@ -613,26 +605,22 @@ if (savedUser) {
                 "Good morning";
 
         }
-
         else if (currentHour < 17) {
 
             greeting =
                 "Good afternoon";
 
         }
-
         else if (currentHour < 22) {
 
             greeting =
                 "Good evening";
 
         }
-
         else {
 
             greeting =
                 "Good night";
-
         }
 
 
@@ -646,22 +634,17 @@ if (savedUser) {
 
             dashboardGreeting.textContent =
                 `${greeting}, ${userName}.`;
-
         }
 
     }
-
     catch (error) {
 
         console.error(
             "Could not load saved user:",
             error
         );
-
     }
-
 }
-
 // ======================================================
 // PORTFOLIO READINESS
 // ======================================================
@@ -670,7 +653,6 @@ function updatePortfolioReadiness() {
 
     const savedResume =
         localStorage.getItem("portfolioResume");
-
 
     const score =
         document.getElementById("portfolioScore");
@@ -724,59 +706,59 @@ function updatePortfolioReadiness() {
 
     if (!savedResume) {
 
-        if (score)
+        if (score) {
             score.textContent = "0%";
+        }
 
-
-        if (progressFill)
+        if (progressFill) {
             progressFill.style.width = "0%";
+        }
 
-
-        if (readinessTitle)
+        if (readinessTitle) {
             readinessTitle.textContent =
                 "Your portfolio starts here.";
+        }
 
-
-        if (readinessDescription)
+        if (readinessDescription) {
             readinessDescription.textContent =
                 "Complete each step to turn your resume into a polished professional portfolio.";
+        }
 
-
-        if (resumeStep)
+        if (resumeStep) {
             resumeStep.classList.add("active");
+        }
 
-
-        if (dnaStep)
+        if (dnaStep) {
             dnaStep.classList.remove("active");
+        }
 
-
-        if (customizeStep)
+        if (customizeStep) {
             customizeStep.classList.remove("active");
+        }
 
-
-        if (publishStep)
+        if (publishStep) {
             publishStep.classList.remove("active");
+        }
 
-
-        if (resumeStepText)
+        if (resumeStepText) {
             resumeStepText.textContent =
                 "Upload your resume";
+        }
 
-
-        if (dnaStepText)
+        if (dnaStepText) {
             dnaStepText.textContent =
                 "Discover your professional profile";
+        }
 
-
-        if (actionTitle)
+        if (actionTitle) {
             actionTitle.textContent =
                 "Ready to get started?";
+        }
 
-
-        if (actionDescription)
+        if (actionDescription) {
             actionDescription.textContent =
                 "Upload your resume and we'll take it from there.";
-
+        }
 
         if (actionButton) {
 
@@ -794,9 +776,7 @@ function updatePortfolioReadiness() {
                     if (fileInput) {
                         fileInput.click();
                     }
-
                 };
-
         }
 
         return;
@@ -807,64 +787,69 @@ function updatePortfolioReadiness() {
     // RESUME EXISTS
     // ==================================================
 
-    if (score)
+    if (score) {
         score.textContent = "85%";
+    }
 
-
-    if (progressFill)
+    if (progressFill) {
         progressFill.style.width = "85%";
+    }
 
-
-    if (readinessTitle)
+    if (readinessTitle) {
         readinessTitle.textContent =
             "Your foundation is ready.";
+    }
 
-
-    if (readinessDescription)
+    if (readinessDescription) {
         readinessDescription.textContent =
             "Your resume has been processed. Now refine your professional identity and bring your portfolio to life.";
+    }
 
 
     // Resume completed
 
-    if (resumeStep)
+    if (resumeStep) {
         resumeStep.classList.add("active");
+    }
 
-
-    if (resumeStepText)
+    if (resumeStepText) {
         resumeStepText.textContent =
             "Resume processed ✓";
+    }
 
 
     // Career DNA active
 
-    if (dnaStep)
+    if (dnaStep) {
         dnaStep.classList.add("active");
+    }
 
-
-    if (dnaStepText)
+    if (dnaStepText) {
         dnaStepText.textContent =
             "Review your Career DNA";
+    }
 
 
     // Future steps
 
-    if (customizeStep)
+    if (customizeStep) {
         customizeStep.classList.remove("active");
+    }
 
-
-    if (publishStep)
+    if (publishStep) {
         publishStep.classList.remove("active");
+    }
 
 
-    if (actionTitle)
+    if (actionTitle) {
         actionTitle.textContent =
             "Your next step is ready.";
+    }
 
-
-    if (actionDescription)
+    if (actionDescription) {
         actionDescription.textContent =
             "Review your Career DNA before customizing your portfolio.";
+    }
 
 
     if (actionButton) {
@@ -877,19 +862,17 @@ function updatePortfolioReadiness() {
 
                 window.location.href =
                     "career-dna.html";
-
             };
-
     }
-
 }
 
 
-// Run dashboard status
+// ======================================================
+// RUN DASHBOARD STATUS
+// ======================================================
 
 updatePortfolioReadiness();
 
-    
 
 // ======================================================
 // RESUME ELEMENTS
@@ -953,6 +936,8 @@ if (resumeFile) {
             }
 
 
+            // Check file type
+
             if (
                 file.type !==
                 "application/pdf"
@@ -964,10 +949,13 @@ if (resumeFile) {
 
                 this.value = "";
 
-                return;
+                selectedResume = null;
 
+                return;
             }
 
+
+            // Check file size
 
             if (
                 file.size >
@@ -980,8 +968,9 @@ if (resumeFile) {
 
                 this.value = "";
 
-                return;
+                selectedResume = null;
 
+                return;
             }
 
 
@@ -1000,7 +989,6 @@ if (resumeFile) {
 
                 selectedFileName.textContent =
                     file.name;
-
             }
 
 
@@ -1008,7 +996,6 @@ if (resumeFile) {
 
                 selectedFileSize.textContent =
                     `${fileSizeMB} MB • PDF`;
-
             }
 
 
@@ -1017,7 +1004,6 @@ if (resumeFile) {
                 selectedFile.classList.add(
                     "show"
                 );
-
             }
 
 
@@ -1025,7 +1011,6 @@ if (resumeFile) {
 
                 chooseFileText.textContent =
                     "Change file";
-
             }
 
 
@@ -1040,7 +1025,6 @@ if (resumeFile) {
 
                 analyzeResumeBtn.innerHTML =
                     "Upload & Analyze →";
-
             }
 
 
@@ -1056,7 +1040,6 @@ if (resumeFile) {
                 uploadStatus.classList.remove(
                     "success"
                 );
-
             }
 
 
@@ -1064,10 +1047,8 @@ if (resumeFile) {
                 "📄 PDF selected:",
                 file.name
             );
-
         }
     );
-
 }
 
 
@@ -1088,7 +1069,6 @@ if (analyzeResumeBtn) {
                 );
 
                 return;
-
             }
 
 
@@ -1111,7 +1091,6 @@ if (analyzeResumeBtn) {
                 uploadStatus.classList.remove(
                     "success"
                 );
-
             }
 
 
@@ -1142,8 +1121,41 @@ if (analyzeResumeBtn) {
                     );
 
 
-                const data =
-                    await response.json();
+                console.log(
+                    "📡 Upload HTTP status:",
+                    response.status
+                );
+
+
+                const contentType =
+                    response.headers.get(
+                        "content-type"
+                    );
+
+
+                let data;
+
+
+                if (
+                    contentType &&
+                    contentType.includes(
+                        "application/json"
+                    )
+                ) {
+
+                    data =
+                        await response.json();
+
+                } else {
+
+                    const text =
+                        await response.text();
+
+                    throw new Error(
+                        text ||
+                        `Server returned status ${response.status}`
+                    );
+                }
 
 
                 console.log(
@@ -1152,105 +1164,78 @@ if (analyzeResumeBtn) {
                 );
 
 
-                if (response.ok) {
+                if (!response.ok) {
 
-                    if (!data.text) {
-
-                        throw new Error(
-                            "Backend did not return extracted text."
-                        );
-
-                    }
-
-
-                    const resumeData = {
-
-                        fileName:
-                            data.fileName ||
-                            selectedResume.name,
-
-                        text:
-                            data.text,
-
-                        parsedData:
-                            data.parsedData ||
-                            null
-
-                    };
-
-
-                    localStorage.setItem(
-                        "portfolioResume",
-                        JSON.stringify(
-                            resumeData
-                        )
+                    throw new Error(
+                        data.message ||
+                        `Upload failed (${response.status})`
                     );
+                }
 
 
-                    console.log(
-                        "💾 Resume saved:"
+                if (!data.text) {
+
+                    throw new Error(
+                        "Backend did not return extracted text."
                     );
+                }
 
-                    console.log(
+
+                const resumeData = {
+
+                    fileName:
+                        data.fileName ||
+                        selectedResume.name,
+
+                    text:
+                        data.text,
+
+                    parsedData:
+                        data.parsedData ||
+                        null
+                };
+
+
+                localStorage.setItem(
+                    "portfolioResume",
+                    JSON.stringify(
                         resumeData
+                    )
+                );
+
+
+                console.log(
+                    "💾 Resume saved:",
+                    resumeData
+                );
+
+
+                if (uploadStatus) {
+
+                    uploadStatus.textContent =
+                        "✓ Resume analyzed successfully!";
+
+                    uploadStatus.classList.add(
+                        "success"
                     );
-
-
-                    if (uploadStatus) {
-
-                        uploadStatus.textContent =
-                            "✓ Resume analyzed successfully!";
-
-                        uploadStatus.classList.add(
-                            "success"
-                        );
-
-                    }
-
-
-                    analyzeResumeBtn.innerHTML =
-                        "Resume analyzed ✓";
-
-
-                    setTimeout(
-                        function () {
-
-                            window.location.href =
-                                "career-dna.html";
-
-                        },
-                        800
-                    );
-
                 }
 
-                else {
 
-                    console.error(
-                        "❌ Upload failed:",
-                        data
-                    );
+                analyzeResumeBtn.innerHTML =
+                    "Resume analyzed ✓";
 
 
-                    if (uploadStatus) {
+                setTimeout(
+                    function () {
 
-                        uploadStatus.textContent =
-                            data.message ||
-                            "Upload failed.";
+                        window.location.href =
+                            "career-dna.html";
 
-                    }
-
-
-                    analyzeResumeBtn.disabled =
-                        false;
-
-                    analyzeResumeBtn.innerHTML =
-                        "Upload & Analyze →";
-
-                }
+                    },
+                    800
+                );
 
             }
-
             catch (error) {
 
                 console.error(
@@ -1265,6 +1250,9 @@ if (analyzeResumeBtn) {
                         error.message ||
                         "Could not connect to the server.";
 
+                    uploadStatus.classList.add(
+                        "active"
+                    );
                 }
 
 
@@ -1273,14 +1261,261 @@ if (analyzeResumeBtn) {
 
                 analyzeResumeBtn.innerHTML =
                     "Upload & Analyze →";
-
             }
-
         }
     );
+}
+// ======================================================
+// RESUME ELEMENTS
+// ======================================================
 
+const resumeFile =
+    document.getElementById("resumeFile");
+
+const selectedFile =
+    document.getElementById("selectedFile");
+
+const selectedFileName =
+    document.getElementById("selectedFileName");
+
+const selectedFileSize =
+    document.getElementById("selectedFileSize");
+
+const chooseFileText =
+    document.getElementById("chooseFileText");
+
+const analyzeResumeBtn =
+    document.getElementById("analyzeResumeBtn");
+
+const uploadStatus =
+    document.getElementById("uploadStatus");
+
+let selectedResume = null;
+
+
+// ======================================================
+// SELECT PDF
+// ======================================================
+
+if (resumeFile) {
+
+    resumeFile.addEventListener("change", function () {
+
+        const file = this.files && this.files[0];
+
+        if (!file) {
+            return;
+        }
+
+        // Check PDF
+        if (
+            file.type !== "application/pdf" &&
+            !file.name.toLowerCase().endsWith(".pdf")
+        ) {
+            alert("Please choose a PDF file.");
+            this.value = "";
+            selectedResume = null;
+            return;
+        }
+
+        // Check 10 MB limit
+        if (file.size > 10 * 1024 * 1024) {
+            alert("PDF must be smaller than 10 MB.");
+            this.value = "";
+            selectedResume = null;
+            return;
+        }
+
+        selectedResume = file;
+
+        const fileSizeMB =
+            (file.size / (1024 * 1024)).toFixed(2);
+
+        if (selectedFileName) {
+            selectedFileName.textContent =
+                file.name;
+        }
+
+        if (selectedFileSize) {
+            selectedFileSize.textContent =
+                `${fileSizeMB} MB • PDF`;
+        }
+
+        if (selectedFile) {
+            selectedFile.classList.add("show");
+        }
+
+        if (chooseFileText) {
+            chooseFileText.textContent =
+                "Change file";
+        }
+
+        if (analyzeResumeBtn) {
+            analyzeResumeBtn.classList.add("show");
+            analyzeResumeBtn.disabled = false;
+            analyzeResumeBtn.innerHTML =
+                "Upload & Analyze →";
+        }
+
+        if (uploadStatus) {
+            uploadStatus.textContent = "";
+            uploadStatus.classList.remove("active");
+            uploadStatus.classList.remove("success");
+        }
+
+        console.log(
+            "📄 PDF selected:",
+            file.name
+        );
+    });
 }
 
+
+// ======================================================
+// UPLOAD + AI ANALYZE
+// ======================================================
+
+if (analyzeResumeBtn) {
+
+    analyzeResumeBtn.addEventListener(
+        "click",
+        async function () {
+
+            if (!selectedResume) {
+                alert("Please choose a resume first.");
+                return;
+            }
+
+            analyzeResumeBtn.disabled = true;
+
+            analyzeResumeBtn.innerHTML =
+                "Analyzing with AI...";
+
+            if (uploadStatus) {
+
+                uploadStatus.textContent =
+                    "AI is reading your resume...";
+
+                uploadStatus.classList.add("active");
+
+                uploadStatus.classList.remove("success");
+            }
+
+            const formData = new FormData();
+
+            formData.append(
+                "resume",
+                selectedResume
+            );
+
+            try {
+
+                console.log(
+                    "📤 Sending resume to backend..."
+                );
+
+                const response = await fetch(
+                    "https://resume-processing-ai.vercel.app/api/upload-resume",
+                    {
+                        method: "POST",
+                        body: formData
+                    }
+                );
+
+                console.log(
+                    "📡 Response status:",
+                    response.status
+                );
+
+                const data = await response.json();
+
+                console.log(
+                    "📥 Backend response:",
+                    data
+                );
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        data.message ||
+                        `Upload failed (${response.status})`
+                    );
+                }
+
+                if (!data.text) {
+
+                    throw new Error(
+                        "Backend did not return extracted resume text."
+                    );
+                }
+
+                const resumeData = {
+
+                    fileName:
+                        data.fileName ||
+                        selectedResume.name,
+
+                    text:
+                        data.text,
+
+                    parsedData:
+                        data.parsedData || null
+                };
+
+                localStorage.setItem(
+                    "portfolioResume",
+                    JSON.stringify(resumeData)
+                );
+
+                console.log(
+                    "💾 Resume saved successfully."
+                );
+
+                if (uploadStatus) {
+
+                    uploadStatus.textContent =
+                        "✓ Resume analyzed successfully!";
+
+                    uploadStatus.classList.add("success");
+                }
+
+                analyzeResumeBtn.innerHTML =
+                    "Resume analyzed ✓";
+
+                // Go to Career DNA
+                setTimeout(function () {
+
+                    window.location.href =
+                        "career-dna.html";
+
+                }, 800);
+
+            }
+            catch (error) {
+
+                console.error(
+                    "❌ Resume upload error:",
+                    error
+                );
+
+                if (uploadStatus) {
+
+                    uploadStatus.textContent =
+                        error.message ||
+                        "Could not connect to the server.";
+
+                    uploadStatus.classList.add("active");
+                }
+
+                analyzeResumeBtn.disabled =
+                    false;
+
+                analyzeResumeBtn.innerHTML =
+                    "Upload & Analyze →";
+            }
+        }
+    );
+}
 // ======================================================
 // DASHBOARD — PORTFOLIO STRENGTH
 // ======================================================
@@ -1321,158 +1556,89 @@ function calculatePortfolioStrength() {
     const savedResume =
         localStorage.getItem("portfolioResume");
 
-
-    // No resume uploaded
     if (!savedResume) {
-
         return 0;
-
     }
-
 
     try {
 
         const resumeData =
             JSON.parse(savedResume);
 
-
         const data =
             resumeData.parsedData || {};
 
-
         let score = 0;
 
-
-        // ----------------------------------------------
-        // PERSONAL INFORMATION
-        // ----------------------------------------------
-
+        // Personal information
         if (data.name) {
-
             score += 10;
-
         }
-
 
         if (data.email) {
-
             score += 5;
-
         }
 
-
-        if (
-            data.phone ||
-            data.location
-        ) {
-
+        if (data.phone || data.location) {
             score += 5;
-
         }
 
-
-        // ----------------------------------------------
-        // PROFESSIONAL INTRODUCTION
-        // ----------------------------------------------
-
+        // Introduction
         if (
             data.introduction &&
             String(data.introduction).trim().length > 20
         ) {
-
             score += 15;
-
         }
 
-
-        // ----------------------------------------------
-        // EDUCATION
-        // ----------------------------------------------
-
+        // Education
         if (
             Array.isArray(data.education) &&
             data.education.length > 0
         ) {
-
             score += 15;
-
         }
 
-
-        // ----------------------------------------------
-        // EXPERIENCE
-        // ----------------------------------------------
-
+        // Experience
         if (
             Array.isArray(data.experience) &&
             data.experience.length > 0
         ) {
-
             score += 15;
-
         }
 
-
-        // ----------------------------------------------
-        // PROJECTS
-        // ----------------------------------------------
-
+        // Projects
         if (
             Array.isArray(data.projects) &&
             data.projects.length > 0
         ) {
-
             score += 15;
-
         }
 
-
-        // ----------------------------------------------
-        // SKILLS
-        // ----------------------------------------------
-
+        // Skills
         if (
             Array.isArray(data.skills) &&
             data.skills.length > 0
         ) {
-
             score += 10;
-
         }
 
-
-        // ----------------------------------------------
-        // ACHIEVEMENTS
-        // ----------------------------------------------
-
+        // Achievements
         if (
             Array.isArray(data.achievements) &&
             data.achievements.length > 0
         ) {
-
             score += 5;
-
         }
 
-
-        // ----------------------------------------------
-        // LINKS
-        // ----------------------------------------------
-
-        if (
-            data.github ||
-            data.linkedin
-        ) {
-
+        // Links
+        if (data.github || data.linkedin) {
             score += 5;
-
         }
-
 
         return Math.min(score, 100);
 
     }
-
     catch (error) {
 
         console.error(
@@ -1481,9 +1647,7 @@ function calculatePortfolioStrength() {
         );
 
         return 0;
-
     }
-
 }
 
 
@@ -1496,108 +1660,62 @@ function updatePortfolioStrength() {
     const score =
         calculatePortfolioStrength();
 
-
     if (portfolioScore) {
-
         portfolioScore.textContent =
             score + "%";
-
     }
 
-
     if (portfolioScoreCircle) {
-
         portfolioScoreCircle.style.setProperty(
             "--score",
             score
         );
-
     }
-
-
-    // ----------------------------------------------
-    // NO RESUME
-    // ----------------------------------------------
 
     if (score === 0) {
 
         if (portfolioStrengthDescription) {
-
             portfolioStrengthDescription.textContent =
                 "Upload your resume to start building your portfolio.";
-
         }
 
         return;
-
     }
-
-
-    // ----------------------------------------------
-    // EARLY STAGE
-    // ----------------------------------------------
 
     if (score < 30) {
 
         if (portfolioStrengthDescription) {
-
             portfolioStrengthDescription.textContent =
                 "Your profile has started. Add more career information to strengthen it.";
-
         }
 
         return;
-
     }
-
-
-    // ----------------------------------------------
-    // DEVELOPING
-    // ----------------------------------------------
 
     if (score < 60) {
 
         if (portfolioStrengthDescription) {
-
             portfolioStrengthDescription.textContent =
                 "Your portfolio is taking shape. Add projects, skills and experience to improve it.";
-
         }
 
         return;
-
     }
-
-
-    // ----------------------------------------------
-    // STRONG
-    // ----------------------------------------------
 
     if (score < 85) {
 
         if (portfolioStrengthDescription) {
-
             portfolioStrengthDescription.textContent =
                 "Great progress. A few more details can make your professional profile stand out.";
-
         }
 
         return;
-
     }
-
-
-    // ----------------------------------------------
-    // COMPLETE
-    // ----------------------------------------------
 
     if (portfolioStrengthDescription) {
-
         portfolioStrengthDescription.textContent =
             "Your profile is looking strong. You're ready to create a polished portfolio.";
-
     }
-
 }
 
 
@@ -1610,69 +1728,40 @@ function updateBuildPortfolioCard() {
     const savedResume =
         localStorage.getItem("portfolioResume");
 
-
-    // ----------------------------------------------
-    // RESUME DOES NOT EXIST
-    // ----------------------------------------------
-
     if (!savedResume) {
 
         if (buildPortfolioTitle) {
-
             buildPortfolioTitle.textContent =
                 "Build your portfolio";
-
         }
-
 
         if (buildPortfolioDescription) {
-
             buildPortfolioDescription.textContent =
                 "Start with your existing resume and let PortfolioAI turn it into your professional identity.";
-
         }
-
 
         if (buildPortfolioBtn) {
-
             buildPortfolioBtn.innerHTML =
                 'Upload resume <span>→</span>';
-
         }
 
-
         return;
-
     }
-
-
-    // ----------------------------------------------
-    // RESUME ALREADY EXISTS
-    // ----------------------------------------------
 
     if (buildPortfolioTitle) {
-
         buildPortfolioTitle.textContent =
             "Continue building";
-
     }
-
 
     if (buildPortfolioDescription) {
-
         buildPortfolioDescription.textContent =
             "Your resume is already processed. Review your Career DNA and continue building your portfolio.";
-
     }
-
 
     if (buildPortfolioBtn) {
-
         buildPortfolioBtn.innerHTML =
             'Continue to Career DNA <span>→</span>';
-
     }
-
 }
 
 
@@ -1691,11 +1780,6 @@ if (buildPortfolioBtn) {
                     "portfolioResume"
                 );
 
-
-            // ------------------------------------------
-            // NO RESUME → GO TO UPLOAD
-            // ------------------------------------------
-
             if (!savedResume) {
 
                 const uploadSection =
@@ -1703,31 +1787,26 @@ if (buildPortfolioBtn) {
                         ".upload-section"
                     );
 
-
                 if (uploadSection) {
 
                     uploadSection.scrollIntoView({
                         behavior: "smooth",
                         block: "start"
                     });
+                }
 
+                // Also open file picker
+                if (resumeFile) {
+                    resumeFile.click();
                 }
 
                 return;
-
             }
-
-
-            // ------------------------------------------
-            // RESUME EXISTS → CAREER DNA
-            // ------------------------------------------
 
             window.location.href =
                 "career-dna.html";
-
         }
     );
-
 }
 
 
@@ -1743,35 +1822,51 @@ if (
     updatePortfolioStrength();
 
     updateBuildPortfolioCard();
-
 }
 
-// Settings dropdown
-const settingsBtn = document.getElementById("settingsBtn");
-const settingsDropdown = document.getElementById("settingsDropdown");
+
+// ======================================================
+// SETTINGS DROPDOWN
+// ======================================================
+
+const settingsBtn =
+    document.getElementById("settingsBtn");
+
+const settingsDropdown =
+    document.getElementById("settingsDropdown");
 
 if (settingsBtn && settingsDropdown) {
 
-    settingsBtn.addEventListener("click", function () {
-        settingsDropdown.classList.toggle("show");
-    });
+    settingsBtn.addEventListener(
+        "click",
+        function () {
 
+            settingsDropdown.classList.toggle(
+                "show"
+            );
+        }
+    );
 }
 
 
-// Logout
-const logoutBtn = document.getElementById("logoutBtn");
+// ======================================================
+// LOGOUT
+// ======================================================
+
+const logoutBtn =
+    document.getElementById("logoutBtn");
 
 if (logoutBtn) {
 
-    logoutBtn.addEventListener("click", function () {
+    logoutBtn.addEventListener(
+        "click",
+        function () {
 
-        localStorage.clear();
-        sessionStorage.clear();
+            localStorage.clear();
+            sessionStorage.clear();
 
-        window.location.href = "index.html";
-
-    });
-
+            window.location.href =
+                "index.html";
+        }
+    );
 }
-
