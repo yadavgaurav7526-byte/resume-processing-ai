@@ -289,7 +289,7 @@ if (signupForm) {
 
                     const response =
                         await fetch(
-                            "http://localhost:3000/api/signup",
+                            "https://resume-processing-ai.vercel.app/api/signup",
                             {
                                 method: "POST",
 
@@ -433,7 +433,7 @@ if (loginForm) {
 
                     const response =
                         await fetch(
-                            "http://localhost:3000/api/login",
+                            "https://resume-processing-ai.vercel.app/api/login",
                             {
                                 method: "POST",
 
@@ -1134,7 +1134,7 @@ if (analyzeResumeBtn) {
 
                 const response =
                     await fetch(
-                        "http://localhost:3000/api/upload-resume",
+                        "https://resume-processing-ai.vercel.app/api/upload-resume",
                         {
                             method: "POST",
                             body: formData
