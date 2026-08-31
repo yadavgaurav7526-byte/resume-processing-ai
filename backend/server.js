@@ -276,13 +276,11 @@ app.post(
                 "📖 Extracting PDF text..."
             );
 
-            const { PDFParse } = require("pdf-parse");
+            
 
-            parser = new PDFParse({
-                data: req.file.buffer
-            });
-            const result = await parser.getText();
-            const extractedText = result?.text || "";
+            const pdfParse = require("pdf-parse");
+            const result = await pdfParse(req.file.buffer);
+            const extractedText = result.text || "";
 
             console.log(
                 "✅ PDF text extracted successfully!"
