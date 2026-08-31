@@ -48,6 +48,11 @@ function logoutUser() {
 }
 
 window.logoutUser = logoutUser;
+const logoutButton = document.getElementById("logoutBtn");
+
+if (logoutButton) {
+    logoutButton.addEventListener("click", logoutUser);
+}
 
 // ------------------------------------------------------
 // DISPLAY USER
