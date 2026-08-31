@@ -69,24 +69,33 @@ const upload = multer({
 // ======================================================
 // MONGODB CONNECTION
 // ======================================================
-if (!process.env.MONGO_URI) {
-    console.error(
-        "❌ MONGO_URI is missing from .env"
-    );
-} else {
-    mongoose
-        .connect(process.env.MONGO_URI)
-        .then(() => {
-            console.log(
-                "✅ Connected to MongoDB ✦"
-            );
-        })
-        .catch((error) => {
-            console.error(
-                "❌ MongoDB connection failed:",
-                error.message
-            );
-        });
+let mongoConnection = null;
+
+async function connectDB() {
+    if (mongoose.connection.readyState === 1) {
+        return;
+    }
+
+    if (!process.env.MONGO_URI) {
+        throw new Error("MONGO_URI is missing");
+    }
+
+    if (!mongoConnection) {
+        mongoConnection = mongoose.connect(process.env.MONGO_URI)
+            .then(() => {
+                console.log("✅ Connected to MongoDB ✦");
+            })
+            .catch((error) => {
+                mongoConnection = null;
+                console.error(
+                    "❌ MongoDB connection failed:",
+                    error.message
+                );
+                throw error;
+            });
+    }
+
+    await mongoConnection;
 }
 
 
@@ -106,6 +115,7 @@ app.get("/", (req, res) => {
 // ======================================================
 app.post("/api/signup", async (req, res) => {
     try {
+        await connectDB();
         const name = String(req.body.name || "").trim();
         const email = String(req.body.email || "")
             .trim()
@@ -180,6 +190,8 @@ app.post("/api/signup", async (req, res) => {
 // ======================================================
 app.post("/api/login", async (req, res) => {
     try {
+        await connectDB();
+
         const email = String(req.body.email || "")
             .trim()
             .toLowerCase();
