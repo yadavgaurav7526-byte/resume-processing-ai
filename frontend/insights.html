@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Insights — PortfolioAI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>✦</span>
+            PortfolioAI
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-link">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="Career-DNA.html" class="sidebar-link">
+                <span>▣</span>
+                Your Career DNA
+            </a>
+
+            <a href="templates.html" class="sidebar-link">
+                <span>✦</span>
+                Templates
+            </a>
+
+            <a href="insights.html" class="sidebar-link active">
+                <span>◉</span>
+                Insights
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="settings.html" class="sidebar-link">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <button
+                type="button"
+                class="sidebar-link logout-btn"
+                id="logoutBtn"
+            >
+                <span>↪</span>
+                Logout
+            </button>
+
+            <div class="user-mini">
+
+                <div class="user-avatar" id="sidebarAvatar">
+                    U
+                </div>
+
+                <div>
+                    <strong id="sidebarUserName">User</strong>
+                    <small>My account</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="dashboard-greeting">
+                    RESUME INSIGHTS
+                </p>
+
+                <h1 id="insightsTitle">
+                    Your career snapshot.
+                </h1>
+
+            </div>
+
+        </header>
+
+
+        <!-- NO RESUME -->
+
+        <section id="noResume" class="insights-empty">
+
+            <div class="empty-icon">◉</div>
+
+            <h2>No resume uploaded yet.</h2>
+
+            <p>
+                Upload your resume from the dashboard
+                to generate insights from your actual profile.
+            </p>
+
+            <a
+                href="dashboard.html"
+                class="primary-insight-btn"
+            >
+                Upload resume →
+            </a>
+
+        </section>
+
+
+        <!-- INSIGHTS -->
+
+        <section
+            id="insightsContent"
+            class="insights-container"
+            style="display: none;"
+        >
+
+            <div class="insights-intro">
+
+                <span>AI CAREER ANALYSIS</span>
+
+                <h2>
+                    Here's what your resume tells us.
+                </h2>
+
+                <p id="resumeName">
+                    Resume
+                </p>
+
+            </div>
+
+
+            <div class="insight-grid">
+
+
+                <!-- SKILLS -->
+
+                <div class="insight-card">
+
+                    <span class="insight-label">
+                        TOP SKILLS
+                    </span>
+
+                    <h3 id="skillsInsight">
+                        —
+                    </h3>
+
+                    <p>
+                        Skills identified from your uploaded resume.
+                    </p>
+
+                </div>
+
+
+                <!-- EXPERIENCE -->
+
+                <div class="insight-card">
+
+                    <span class="insight-label">
+                        EXPERIENCE
+                    </span>
+
+                    <h3 id="experienceInsight">
+                        —
+                    </h3>
+
+                    <p>
+                        Your current experience and professional level.
+                    </p>
+
+                </div>
+
+
+                <!-- CAREER -->
+
+                <div class="insight-card">
+
+                    <span class="insight-label">
+                        CAREER DIRECTION
+                    </span>
+
+                    <h3 id="careerInsight">
+                        —
+                    </h3>
+
+                    <p>
+                        Career areas suggested by your resume.
+                    </p>
+
+                </div>
+
+
+                <!-- QUALITY -->
+
+                <div class="insight-card">
+
+                    <span class="insight-label">
+                        RESUME QUALITY
+                    </span>
+
+                    <h3 id="qualityInsight">
+                        —
+                    </h3>
+
+                    <p>
+                        A quick assessment based on the information provided.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="resume-summary-card">
+
+                <span class="insight-label">
+                    RESUME SUMMARY
+                </span>
+
+                <p id="resumeSummary">
+                    —
+                </p>
+
+            </div>
+
+
+            <!-- FILE INFO -->
+
+            <div class="resume-source">
+
+                <span>ANALYZED RESUME</span>
+
+                <strong id="sourceFileName">
+                    —
+                </strong>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="insights.js"></script>
+    <script src="auth.js"></script>
+
+</body>
+
+</html>

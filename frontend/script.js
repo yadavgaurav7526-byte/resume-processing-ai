@@ -203,6 +203,18 @@ if (
 
 }
 
+// ======================================================
+// EMAIL VALIDATION
+// ======================================================
+
+function isValidEmail(email) {
+
+    const emailPattern =
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    return emailPattern.test(email.trim());
+
+}
 
 // ======================================================
 // SIGNUP
@@ -255,6 +267,17 @@ if (signupForm) {
                     passwordInput
                         ? passwordInput.value
                         : "";
+
+                        if (!isValidEmail(email)) {
+
+    alert(
+        "Please enter a valid email address."
+    );
+
+    emailInput.focus();
+
+    return;
+}
 
 
                 try {
@@ -388,6 +411,17 @@ if (loginForm) {
                     passwordInput
                         ? passwordInput.value
                         : "";
+
+                        if (!isValidEmail(email)) {
+
+    alert(
+        "Please enter a valid email address."
+    );
+
+    emailInput.focus();
+
+    return;
+}
 
 
                 try {
@@ -1711,3 +1745,33 @@ if (
     updateBuildPortfolioCard();
 
 }
+
+// Settings dropdown
+const settingsBtn = document.getElementById("settingsBtn");
+const settingsDropdown = document.getElementById("settingsDropdown");
+
+if (settingsBtn && settingsDropdown) {
+
+    settingsBtn.addEventListener("click", function () {
+        settingsDropdown.classList.toggle("show");
+    });
+
+}
+
+
+// Logout
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+
+    logoutBtn.addEventListener("click", function () {
+
+        localStorage.clear();
+        sessionStorage.clear();
+
+        window.location.href = "index.html";
+
+    });
+
+}
+

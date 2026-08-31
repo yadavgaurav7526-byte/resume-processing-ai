@@ -69,18 +69,23 @@
 
             <div class="sidebar-bottom">
 
-    <a href="settings.html" class="sidebar-link">
+    <div class="settings-menu">
 
+    <button type="button" class="sidebar-link settings-btn" id="settingsBtn">
         <span>⚙</span>
         Settings
+    </button>
 
-    </a>
+    <div class="settings-dropdown" id="settingsDropdown">
 
+        <button type="button" id="logoutBtn" class="dropdown-logout">
+            <span>↪</span>
+            Logout
+        </button>
 
-    <button type="button" class="sidebar-link logout-btn" id="logoutBtn">
-    <span>↪</span>
-    Logout
-</button>
+    </div>
+
+</div>
 
 
     <div class="user-mini">
@@ -430,9 +435,23 @@
     </main>
 
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 <script src="auth.js"></script>
 
-</body>
+<script>
+    const logoutBtn = document.getElementById("logoutBtn");
 
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+
+            localStorage.removeItem("portfolioUser");
+            localStorage.removeItem("portfolioResume");
+
+            window.location.href = "index.html";
+
+        });
+    }
+</script>
+
+</body>
 </html>
