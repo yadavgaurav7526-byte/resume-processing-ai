@@ -649,3 +649,23 @@ document.body.appendChild(
 console.log(
     "✅ Portfolio generated successfully."
 );
+
+// ======================================================
+// DOWNLOAD PORTFOLIO
+// ======================================================
+
+const downloadButton =
+    document.getElementById("downloadPortfolioBtn");
+
+if (downloadButton) {
+
+    downloadButton.addEventListener(
+        "click",
+        function () {
+
+            window.print();
+
+        }
+    );
+
+}

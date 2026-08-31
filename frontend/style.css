@@ -5301,3 +5301,48 @@ body.template-developer .portfolio-contact {
     }
 
 }
+/* ======================================================
+   DOWNLOAD PORTFOLIO BUTTON
+   ====================================================== */
+
+.download-portfolio-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+
+    background: transparent;
+    color: inherit;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.download-portfolio-btn:hover {
+    background: currentColor;
+    color: var(--portfolio-bg, #ffffff);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.download-portfolio-btn:active {
+    transform: translateY(0);
+}
