@@ -947,7 +947,7 @@ if (improveCareerButton) {
 
         try {
             const response = await fetch(
-                "http://localhost:3000/api/improve-career",
+                "https://resume-processing-ai.vercel.app/api/improve-career",
                 {
                     method: "POST",
                     headers: {
